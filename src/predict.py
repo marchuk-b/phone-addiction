@@ -15,7 +15,6 @@ FEATURE_NAMES = [
 
 MODEL_DIR = "./artifacts/model_2026-04-15_19-57-28"
 
-
 def load_artifacts():
     model = joblib.load(f"{MODEL_DIR}/model.pkl")
     scaler = joblib.load(f"{MODEL_DIR}/scaler.pkl")
@@ -63,3 +62,11 @@ def predict():
 
 if __name__ == "__main__":
     predict()
+
+    while(True):
+        stopWord = input("\nIf you wanna exit, write exit: ")
+        if stopWord.lower() == "exit":
+            break
+        else: 
+            print("")
+            predict()
